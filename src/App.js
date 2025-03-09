@@ -1,11 +1,49 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Card from './Card';
+
+
 
 function App() {
+
+  const cardsData = [
+    {
+      title: 'Managed Services',
+      description: 'Free up your internal resources to focus on the business by letting us handle day to day support services, management and monitoring your IT.',
+      imageUrl: 'demo-image.png',
+    },
+    {
+      title: 'IT Consulting and Advisory',
+      description: 'Free up your internal resources to focus on the business by letting us handle day to day support services, management and monitoring your IT.',
+      imageUrl: 'demo-image.png',
+    },
+    {
+      title: 'Cyber security',
+      description: 'Free up your internal resources to focus on the business by letting us handle day to day support services, management and monitoring your IT.',
+      imageUrl: 'demo-image.png',
+    },
+    {
+      title: 'Web Development',
+      description: 'Free up your internal resources to focus on the business by letting us handle day to day support services, management and monitoring your IT..',
+      imageUrl: 'demo-image.png',
+    },
+    {
+      title: 'Mobile Development',
+      description: 'Free up your internal resources to focus on the business by letting us handle day to day support services, management and monitoring your IT..',
+      imageUrl: 'demo-image.png',
+    },
+    {
+      title: 'Cloud Services',
+      description: 'Free up your internal resources to focus on the business by letting us handle day to day support services, management and monitoring your IT.',
+      imageUrl: './demo-image.png',
+    },
+    
+  ];
+
   return (
     <div>
-      {/* Navbar */}
+      
       <nav className="navbar navbar-expand-lg">
         <div className="container">
           <a className="navbar-brand" href="#">Intelion</a>
@@ -27,11 +65,23 @@ function App() {
       </nav>
 
       <section className="solutions container">
-        <h2>Solutions</h2>
+        <h2>Solutions and Services</h2>
+          <div className="app">
+            <div className="card-container">
+              {cardsData.map((card, index) => (
+                <Card
+                  key={index}
+                  title={card.title}
+                  description={card.description}
+                  imageUrl={card.imageUrl}
+                />
+              ))}
+            </div>
+          </div>
         
       </section>
 
-      {/* Features Section */}
+      
       <section className="container text-center my-5">
         <h2>Our Features</h2>
         <div className="row">
@@ -53,7 +103,7 @@ function App() {
         </div>
       </section>
 
-      {/* Footer */}
+      
       <footer>
         <div className="footer">
 
